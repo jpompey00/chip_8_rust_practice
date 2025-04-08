@@ -1,7 +1,32 @@
+
 fn main() {
-    println!("Hello, world!");
+    // println!("Hello, world!");
+    display();
 }
 
+
+fn display(){
+//64 x 32 pixels
+    const DISPLAY_WIDTH: usize = 64;
+    const DISPLAY_HEIGHT: usize = 32;
+
+    
+    let mut display_arr: [[bool; DISPLAY_WIDTH]; DISPLAY_HEIGHT] = [[false; DISPLAY_WIDTH]; DISPLAY_HEIGHT];
+
+
+   for i in 0..display_arr.len(){
+    for j in 0..display_arr[i].len(){
+        let mut output:char = ' ';
+        if(display_arr[i][j] == true){
+            output = '█'; 
+        }
+        print!("{}",output);
+    }
+    println!("");
+   }
+
+   
+}
 
 //https://tobiasvl.github.io/blog/write-a-chip-8-emulator/
 /*
